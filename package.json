@@ -1,0 +1,10 @@
+{
+	"name": "vanilla-wysiwyg",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"dependencies": {
+		"bootstrap": "^5.3.3",
+		"bootstrap-icons": "^1.11.3"
+	}
+}

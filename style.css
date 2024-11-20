@@ -1,0 +1,94 @@
+#sourceView {
+	font-family: 'Courier New', Courier, monospace;
+	font-size: 14px;
+	white-space: pre-wrap;
+	resize: none;
+}
+
+/* Font controls */
+#fontFamilySelect,
+#fontSizeSelect,
+#headingSelect {
+	min-width: 120px;
+}
+
+#fontFamilySelect option {
+	font-size: 14px;
+}
+
+/* Emoji and Symbol pickers */
+.emoji-picker,
+.color-picker,
+.symbol-picker {
+	position: absolute;
+	background: var(--bs-body-bg);
+	border: 1px solid var(--bs-border-color-translucent);
+	border-radius: var(--bs-border-radius);
+	padding: 5px;
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	gap: 2px;
+	z-index: 1000;
+	box-shadow: var(--bs-box-shadow);
+}
+
+.emoji-picker button,
+.color-picker button,
+.symbol-picker button {
+	background: none;
+	border: 1px solid #464646;
+	padding: 5px;
+	cursor: pointer;
+	font-size: 16px;
+}
+
+.emoji-picker button:hover,
+.color-picker button:hover,
+.symbol-picker button:hover {
+	background: #575757;
+}
+
+/* Table styles */
+.table {
+	width: 100%;
+	margin-bottom: 1rem;
+	border-collapse: collapse;
+}
+
+.table th,
+.table td {
+	padding: 0.75rem;
+	vertical-align: top;
+	border: 1px solid #dee2e6;
+	min-width: 100px;
+}
+
+.table th {
+	font-weight: bold;
+	background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Add tooltips for better UX */
+[data-command] {
+	position: relative;
+}
+
+[data-command]::after {
+	transition:opacity 1s linear;
+	opacity:0;
+}
+[data-command]:hover::after {
+	content: attr(title);
+	position: absolute;
+	bottom: 100%;
+	left: 50%;
+	transform: translateX(-50%);
+	padding: 4px 8px;
+	background-color: rgba(0, 0, 0, 0.8);
+	color: white;
+	opacity: 1;
+	border-radius: 4px;
+	font-size: 12px;
+	white-space: nowrap;
+	z-index: 1000;
+}
